@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSV File Upload</title>
+    <p style="background-image: url('bmwimage.webp');">
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input[type="file"],
+      input[type="text"] {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0 auto; /* Center align the input fields */
+        margin-top: 5px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 22px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .error {
+        color: red;
+        font-size: 16px;
+        text-align: center;
+      }
+      .mid {
+        text-align: center;
+      }
+      .label-left {
+        padding-right: 390px;
+      }
+      .label-left1 {
+        padding-right: 430px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mid">
+      <h1>Information Sorting System for Cars </h1>
+      <h3> upload csv file <h3>
+      <form method="post" enctype="multipart/form-data">
+        <input
+          type="hidden"
+          name="csrfmiddlewaretoken"
+          value="{{ csrf_token }}"
+        />
+
+        <label for="csv_file" class="label-left">Choose a CSV file:</label>
+        <input type="file" name="csv_file" accept=".csv" required />
+        <br />
+        <label for="sort_attribute" class="label-left1">Sort Attribute:</label>
+        <input type="text" name="sort_attribute" required />
+        <br />
+        <input type="submit" value="Upload and Sort" />
+      </form>
+
+      <p class="error" style="display: none">{{ error_message }}</p>
+    </div>
+
+    <script>
+      // JavaScript to show the error message when an error occurs after clicking submit
+      const form = document.querySelector("form");
+      const errorMessage = document.getElementById("error_message");
+
+      form.addEventListener("submit", (e) => {
+        errorMessage.style.display = "none"; // Hide the error message initially
+        if (errorMessage.textContent.trim().length === 0) {
+          e.preventDefault(); // Prevent form submission if no error occurred
+        }
+      });
+    </script>
+  </body>
+</html>

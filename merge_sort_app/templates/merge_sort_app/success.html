@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+      }
+      h2 {
+        margin-top: 20px;
+      }
+      p {
+        margin: 5px 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      a {
+        text-decoration: none;
+        color: #4caf50;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Success Page</h1>
+    <div class="container">
+      <p>Your operation was successful.</p>
+
+      <h2>Execution Times</h2>
+      <p>Regular Execution Time: {{ regular_execution_time }} nanoseconds</p>
+      <p>
+        Multi-threaded Execution Time: {{ multithreaded_execution_time }} nanoseconds
+      </p>
+
+      <h2>Space Complexity</h2>
+      <p>Regular Space Complexity: {{ space_complexity }} bytes</p>
+      <p>
+        Multi-threaded Space Complexity: {{ space_complexity_multithreaded }} bytes
+      </p>
+
+      <h2>Download Sorted CSV</h2>
+      <p>
+        <a href="{% url 'download_sorted_csv' file_name=sorted_csv_filename %}"
+          >Download Sorted File</a
+        >
+      </p>
+    </div>
+
+    <!-- Add any additional content or links here -->
+
+    <!-- Add any additional JavaScript or scripts here -->
+  </body>
+</html>
