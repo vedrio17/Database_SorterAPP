@@ -87,14 +87,13 @@
     </div>
 
     <script>
-      // JavaScript to show the error message when an error occurs after clicking submit
       const form = document.querySelector("form");
       const errorMessage = document.getElementById("error_message");
 
       form.addEventListener("submit", (e) => {
-        errorMessage.style.display = "none"; // Hide the error message initially
+        errorMessage.style.display = "none";
         if (errorMessage.textContent.trim().length === 0) {
-          e.preventDefault(); // Prevent form submission if no error occurred
+          e.preventDefault();
         }
       });
     </script>
