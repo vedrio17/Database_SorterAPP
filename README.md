@@ -1,8 +1,5 @@
-# Database_Sorter Web APP
+# Database Sorter Web APP
 Creating a GitHub README for a Database Sorter Web Application that uses Merge Sort and Multithreaded Merge Sort with a Django interface:
-
-# Database Sorter Web App
-A web application for sorting databases using Merge Sort and Multithreaded Merge Sort with a Django interface.
 
 ## Table of Contents
 
